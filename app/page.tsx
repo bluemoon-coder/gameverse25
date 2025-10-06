@@ -4,7 +4,6 @@ import { Badge } from "@/components/ui/badge"
 import { Trophy, Target, Users, ArrowRight, Gamepad2, Zap, Award } from "lucide-react"
 import Link from "next/link"
 import { getAllTeams, getAllMatches, getUpcomingMatches } from "@/lib/google-sheets"
-import { DesktopNav } from "@/components/desktop-nav"
 
 async function getStats() {
   const [teams, matches] = await Promise.all([getAllTeams(), getAllMatches()])
@@ -26,7 +25,6 @@ export default async function HomePage() {
   return (
     <div className="min-h-screen pb-20">
       {/* Navigation */}
-      <DesktopNav />
 
       {/* Mobile Header */}
       <div className="md:hidden sticky top-0 z-50 bg-background/95 backdrop-blur border-b px-4 py-3">
